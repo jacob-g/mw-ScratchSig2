@@ -44,10 +44,10 @@ function sigParserInit (Parser $parser) {
 
 function sigFetchProfile ($username) {
     // Fetch page
-    $data = file_get_contents('http://scratch.mit.edu/site-api/users/all/' . str_replace(' ', '_', $username) . '/');
+    $data = file_get_contents('httsp://scratch.mit.edu/site-api/users/all/' . str_replace(' ', '_', $username) . '/');
     $json = json_decode($data, $assoc=true);
     $pk = $json['user']['pk'];
-    $image_url = "http://cdn.scratch.mit.edu/get_image/user/{$pk}_18x18.png";
+    $image_url = "https://cdn.scratch.mit.edu/get_image/user/{$pk}_18x18.png";
     return $image_url;
 }
 
